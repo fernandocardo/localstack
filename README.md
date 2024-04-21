@@ -8,6 +8,7 @@
     1. Docker Compose
     1. Python
     1. Localstack Desktop
+
 1. Instalar e configurar a AWS CLI
 
 
@@ -77,8 +78,8 @@ Quando seu docker-compose estiver rodando, você verá a extensão dessa forma:
 
 Você também pode clicar no botão "Local Stack Web Aplication", que vai abrir seu navegador no endereço https://app.localstack.cloud/dashboard .
 
-Busque no menu lateral por "Resorce Browser", para ver o serviços disponíveis no localstack. Posteriormente vamos interagir com eles.
 
+Busque no menu lateral por "Resorce Browser", para ver o serviços disponíveis no localstack. Posteriormente vamos interagir com eles.
 
 
 ### Instalar e Configurar a AWS CLI
@@ -142,4 +143,3 @@ Dessa forma, poderá suprimir o comando --profile localstack
 ```bash
 aws s3 ls 
 ```
-
