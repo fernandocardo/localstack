@@ -8,7 +8,8 @@
     1. Docker Compose
     1. Python
     1. Localstack Desktop
-1.
+
+1. Instalar e configurar a AWS CLI
 
 
 ## [O que é o Localstack](#o-que-é-o-localstack)
@@ -77,4 +78,68 @@ Quando seu docker-compose estiver rodando, você verá a extensão dessa forma:
 
 Você também pode clicar no botão "Local Stack Web Aplication", que vai abrir seu navegador no endereço https://app.localstack.cloud/dashboard .
 
+
 Busque no menu lateral por "Resorce Browser", para ver o serviços disponíveis no localstack. Posteriormente vamos interagir com eles.
+
+
+### Instalar e Configurar a AWS CLI
+
+Após a instalação e configuração do Localstack, nosso próximo passo será a instalação e configuração da AWS CLI, para podermos interagir via console com o Localstack e criar os serviços AWS.
+
+Se você tiver instalado o Python e o PIP e preferir instalar via PIP, basta executar o comando no terminal:
+
+```bash
+pip install awscli
+```
+
+Ou como alternativa, instalar o executável a partir do [site oficial](https://docs.localstack.cloud/user-guide/integrations/aws-cli/#aws-cli) da AWS CLI (minha preferência).
+
+Após a instalação da AWS CLI, vamos configurá-la para ser possível interagir com o Localstack
+
+Crie o arquivo __~/.aws/config__
+
+```ini
+[profile localstack]
+region=us-east-1
+output=json
+endpoint_url = http://localhost:4566
+```
+
+E posteriormente o arquivo __~/.aws/credentials__
+ 
+```ini
+[localstack]
+aws_access_key_id=test
+aws_secret_access_key=test
+```
+
+Nesse momento já é possivel acessar o Localstack usando  a AWS CLI. 
+Vamos fazer nosso primeiro teste, criando um bucket S3:
+
+```bash
+aws s3 mb s3://meu-primeiro-bucket --profile localstack
+```
+
+E posteriormente poderemos consultar se o arquivo S3 foi criado
+```bash
+aws s3 ls --profile localstack
+```
+
+Caso não tenha vários profiles configurados na máquina, pode criar uma variável de ambiente no seu sistema operacional
+
+Windows:
+```powershell
+set AWS_PROFILE=localstack
+```
+
+Linux ou Mac:
+
+```bash
+export AWS_PROFILE=localstack
+```
+
+Dessa forma, poderá suprimir o comando --profile localstack
+
+```bash
+aws s3 ls 
+```
