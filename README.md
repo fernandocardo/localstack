@@ -75,6 +75,6 @@ Quando seu docker-compose estiver rodando, você verá a extensão dessa forma:
 
 ![Extensão Localstack Rodando](/doc/images/extensao-local-stack-rodando.png "Extensão Localstack Rodando")
 
-Você também pode clicar no botão "Local Stack Web Aplication", que vai abrir seu navegador no endereço https://app.localstack.cloud/dashboard.
+Você também pode clicar no botão "Local Stack Web Aplication", que vai abrir seu navegador no endereço https://app.localstack.cloud/dashboard .
 
 Busque no menu lateral por "Resorce Browser", para ver o serviços disponíveis no localstack. Posteriormente vamos interagir com eles.
