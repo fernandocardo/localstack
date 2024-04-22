@@ -3,22 +3,20 @@
 ## Agenda
 
 1. [O que é o Localstack](#o-que-é-o-localstack)
-1. [Por que desenvolver localmente](#porque-localmente)
+1. [Por que desenvolver localmente](#por-que-desenvolver-localmente)
 1. [Como instalar o localstack](#como-instalar)
-    1. Docker Compose
-    1. Python
+    1. [Docker Compose](#docker-compose)
+    1. [Python](#)
     1. Localstack Desktop
 
-1. Instalar e configurar a AWS CLI
-1. [Exemplo de programa acessando Local Stack](#exemplo-programa)
+1. [Instalar e configurar a AWS CLI](#instalar-e-configurar-a-aws-cli)
+1. [Exemplo completo](#exemplo-de-programa-acessando-local-stack)
 
 
 
-## [O que é o Localstack](#o-que-é-o-localstack)
+## O que é o Localstack
 
-
-## [Por que desenvolver localmente](#porque-localmente)
-
+## Por que desenvolver localmente
 
 ## [Como instalar](#como-instalar)
 
@@ -27,7 +25,6 @@
 #### O que é o Docker Compose
 Docker Compose é uma ferramenta que permite definir e gerenciar aplicativos multi-container usando arquivos YAML. Com ele, você pode especificar os serviços, redes e volumes necessários para sua aplicação e, em seguida, iniciar todos esses componentes com um único comando.
 
-####
 A maneira mais fácil e recomendada de obter o Docker Compose é instalando o Docker Desktop. 
 O Docker Desktop inclui o Docker Compose, juntamente com o Docker Engine e o Docker CLI, que são pré-requisitos para o Compose.
 
@@ -147,7 +144,7 @@ aws s3 ls
 ```
 
 
-## [Exemplo de programa acessando Local Stack](#exemplo-programa)
+## Exemplo de programa acessando Local Stack
 
 Vamos criar um exemplo bem simples usando python, onde vamos acessar um arquivo .json previamente incluído num bucket S3, desserializá-lo e imprimir o conteúdo no console.
 
