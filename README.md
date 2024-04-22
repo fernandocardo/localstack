@@ -10,6 +10,8 @@
     1. Localstack Desktop
 
 1. Instalar e configurar a AWS CLI
+1. [Exemplo de programa acessando Local Stack](#exemplo-programa)
+
 
 
 ## [O que é o Localstack](#o-que-é-o-localstack)
@@ -142,4 +144,64 @@ Dessa forma, poderá suprimir o comando --profile localstack
 
 ```bash
 aws s3 ls 
+```
+
+
+## [Exemplo de programa acessando Local Stack](#exemplo-programa)
+
+Vamos criar um exemplo bem simples usando python, onde vamos acessar um arquivo .json previamente incluído num bucket S3, desserializá-lo e imprimir o conteúdo no console.
+
+Primeiro vamos criar o arquivo resultado.json:
+
+```json
+{
+    "nome": "Joao",
+    "idade": 25
+}
+```
+
+E depois vamos fazer o upload do arquivo:
+
+```bash
+aws s3 cp resultado.json s3://meu-primeiro-bucket/resultado.json
+```
+
+```python
+import json
+import boto3
+
+# Crie uma instância do cliente S3
+s3 = boto3.client('s3')
+
+# Nome do bucket S3
+bucket_name = 'meu-primeiro-bucket'
+
+# Nome do arquivo a ser buscado
+file_name = 'resultado.json'
+
+try:
+    # Faça a requisição para obter o arquivo do bucket
+    response = s3.get_object(Bucket=bucket_name, Key=file_name)
+
+    # Leia o conteúdo do arquivo
+    file_content = response['Body'].read()
+       
+    cliente = json.loads(file_content)
+
+    # Faça algo com o conteúdo do arquivo
+    print(cliente)
+
+except Exception as e:
+    # Trate qualquer erro que possa ocorrer
+    print(f"Erro ao buscar o arquivo: {e}")
+```
+
+Ao executar o programa em python:
+```bash
+python main.py
+
+```
+O resultado esperado (o arquivo resultado.json desserealizado):
+```bash
+{'nome': 'Joao', 'idade': 25}
 ```
