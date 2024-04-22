@@ -6,7 +6,7 @@
 1. [Por que desenvolver localmente](#por-que-desenvolver-localmente)
 1. [Como instalar o localstack](#como-instalar)
     1. [Docker Compose](#docker-compose)
-    1. [Python](#)
+    1. [Python]
     1. Localstack Desktop
 
 1. [Instalar e configurar a AWS CLI](#instalar-e-configurar-a-aws-cli)
