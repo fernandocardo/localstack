@@ -19,5 +19,4 @@ def obterDadosBucket(nome_bucket,nome_arquivo):
 
     except Exception as e:
         # Trate qualquer erro que possa ocorrer
-        print(f"Erro ao buscar o arquivo: {e}")
-        return None
+        return (f"Erro ao buscar o arquivo: {nome_arquivo}")
