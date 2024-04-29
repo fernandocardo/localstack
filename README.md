@@ -6,7 +6,7 @@
 1. [Por que desenvolver localmente](#por-que-desenvolver-localmente)
 1. [Como instalar o localstack](#como-instalar)
     1. [Docker Compose](#docker-compose)
-    1. [Python]
+    1. Python
     1. Localstack Desktop
 
 1. [Instalar e configurar a AWS CLI](#instalar-e-configurar-a-aws-cli)
@@ -15,6 +15,22 @@
 
 
 ## O que é o Localstack
+O LocalStack é uma ferramenta que emula os serviços da AWS localmente por meio de contêineres, permitindo que você desenvolva e teste aplicativos usando recursos da AWS em sua máquina ou mesmo num ambiente de integração contínua, sem precisar se conectar a um ambiente de nuvem remoto. 
+
+Essa possibilidade de emulação local melhora significativamente a experiência do desenvolvedor, que consegue interagir com os serviços da AWS usando as ferramentas que já está habituado, como AWS CLI, SDKs, Terraform, Cloud Formation, SAM, AWS CDK, TestContainer e etc., sem se preocupar com custos, credenciais e recebendo respostas muito mais rápidas, por estar rodando local. Uma outra excelente vantagem do uso do LocalStack é não precisar se preocupar com gestão de contas SandBox ou remover recursos de cloud após o uso. 
+
+O LocalStack possui uma versão gratuita e outra paga. A principal diferença entre elas é a lista de serviços AWS suportados por cada uma.
+
+A versão gratuita (que também pode ser utilizada por empresas) suporta os principais serviços da AWS, principalmente os que são desenvolvidos por eles como:
+- Lambda
+- S3
+- DynamoDB
+- Kinesis 
+- SQS 
+- SNS 
+- SSM
+- Secret Manager
+
 
 ## Por que desenvolver localmente
 
